@@ -10,7 +10,8 @@ namespace Boss.Movement
         [SerializeField] float baseSpeed = 60f;
         [SerializeField] float walkSpeedModifier = 1f;
         [SerializeField] float runSpeedModifier = 2f;
-
+        [SerializeField] Transform sprite = null;
+ 
         Rigidbody2D rb;
         Animator animator;
 
@@ -64,7 +65,7 @@ namespace Boss.Movement
             if (destination.position.x >= transform.position.x) direction = 1f;
             else direction = -1f;
 
-            transform.localScale = new Vector2(direction, 1f);
+            sprite.localScale = new Vector2(direction, 1f);
 
             float moveSpeed = baseSpeed * currentModifier * direction;
             return moveSpeed;
@@ -102,7 +103,7 @@ namespace Boss.Movement
 
         public void WalkRight()
         {
-            transform.localScale = new Vector2(1f, 1f);
+            sprite.localScale = new Vector2(1f, 1f);
             currentModifier = walkSpeedModifier;
             isWalking = true;
         }

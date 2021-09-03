@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using Boss.Core;
+using Boss.Object;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth = 50f;
     [SerializeField] MMFeedbacks hitFeedback = null;
-    [SerializeField] BEvent combatEnded = null;
     float currentHealth;
 
     bool isAlive = true;
@@ -23,7 +23,6 @@ public class Health : MonoBehaviour
         hitFeedback.PlayFeedbacks();
 
         currentHealth = Mathf.Max(currentHealth - damage, 0f);
-
         if(currentHealth <= 0f)
         {
             Die();
@@ -35,7 +34,12 @@ public class Health : MonoBehaviour
         isAlive = false;
         GetComponent<Animator>().SetTrigger("die");
 
-        combatEnded.Occurred(gameObject);
+        ActionObject actionObject = GetComponent<ActionObject>();
+        if(actionObject != null) // if Enemy
+        {
+            actionObject.Disable();
+            actionObject.EndActionWithThisObject();
+        }
     }
 
     public bool IsAlive()

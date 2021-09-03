@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 892637372}
   - component: {fileID: 1719877851}
   - component: {fileID: 1719877852}
+  - component: {fileID: 8741732463125567975}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Untagged
@@ -413,3 +414,15 @@ MonoBehaviour:
   maxHealth: 50
   hitFeedback: {fileID: 1533656237}
   combatEnded: {fileID: 11400000, guid: cc4a76cdd81de9d4baf90c1359d0543f, type: 2}
+--- !u!114 &8741732463125567975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637702473286814267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b89801fcdb9ed4d8435033a61f1f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

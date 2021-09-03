@@ -198,6 +198,9 @@ GameObject:
   - component: {fileID: 1529482098}
   - component: {fileID: 1529482099}
   - component: {fileID: 1529482100}
+  - component: {fileID: 3456341183564477117}
+  - component: {fileID: 1235944282}
+  - component: {fileID: 1126943089}
   m_Layer: 6
   m_Name: Default Enemy
   m_TagString: Untagged
@@ -350,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45239f64bd6e0ca408f92be3a35e14a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 80
+  baseSpeed: 40
   walkSpeedModifier: 1
   runSpeedModifier: 2
 --- !u!114 &1529482099
@@ -367,7 +370,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   hitFeedback: {fileID: 203579520}
-  combatEnded: {fileID: 11400000, guid: cc4a76cdd81de9d4baf90c1359d0543f, type: 2}
 --- !u!114 &1529482100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,9 +382,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425783de6c8f0b3469a0a8b05d0592c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
   attackRange: 1.5
   target: {fileID: 0}
+--- !u!114 &3456341183564477117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793397738011633469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa57c83fc85b5442a132460c86ef937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 0
+  actionEnded: {fileID: 11400000, guid: 120296eee6160f845b56e9e5009606d1, type: 2}
+  type: 0
+--- !u!114 &1235944282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793397738011633469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8c20fcf3f46d4439bfd606ddb6b561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1126943089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793397738011633469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fcce84b8304d04b9c70856d4d2c25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 6
 --- !u!1 &7070088105443965935
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +495,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -232754719
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 6677806975911841103, guid: 101c604305d43f044b89429e20684ca4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

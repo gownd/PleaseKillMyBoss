@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Boss.Core;
+using Boss.Movement;
 
 namespace Boss.Combat
 {
@@ -27,7 +28,7 @@ namespace Boss.Combat
 
             if (!IsInRange())
             {
-                mover.MoveTo(target.transform);
+                mover.RunTo(target.transform);
             }
             else
             {
@@ -62,8 +63,15 @@ namespace Boss.Combat
             if (!target.IsAlive()) return;
 
             target.TakeDamage(damage);
-
             if (!target.IsAlive()) Cancel();
+        }
+
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if (combatTarget == null) return false;
+
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && targetToTest.IsAlive();
         }
     }
 

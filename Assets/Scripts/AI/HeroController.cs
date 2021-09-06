@@ -118,7 +118,7 @@ namespace Boss.AI
             }
         }
 
-        public void GoToWalkState() // Event Listner에서 실행
+        public void GoToWalkState() // Event Listner에서 실행 <- Action Ended
         {
             StartCoroutine(HandleGoToWalkState());
         }

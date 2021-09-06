@@ -7,9 +7,12 @@ namespace Boss.Object
 {
     public class ActionObject : MonoBehaviour
     {
-        [SerializeField] float interactRange;
-        [SerializeField] BEvent actionEnded;
         public ObjectType type;
+        [SerializeField] float interactRange;
+        
+        [Header("Events")]
+        [SerializeField] BEvent actionStarted;
+        [SerializeField] BEvent actionEnded;
 
         bool canInteract = true;
         bool isTarget = false;
@@ -48,7 +51,7 @@ namespace Boss.Object
         public void StartActionWithThisObject()
         {
             SetTarget(true);
-            // actionStarted.Occurred(this.gameObject);
+            actionStarted.Occurred(this.gameObject);
         }
 
         public void EndActionWithThisObject()

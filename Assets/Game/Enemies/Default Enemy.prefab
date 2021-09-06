@@ -751,9 +751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa57c83fc85b5442a132460c86ef937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 0
-  actionEnded: {fileID: 11400000, guid: 120296eee6160f845b56e9e5009606d1, type: 2}
   type: 0
+  interactRange: 0
+  actionStarted: {fileID: 0}
+  actionEnded: {fileID: 11400000, guid: 120296eee6160f845b56e9e5009606d1, type: 2}
 --- !u!114 &1235944282
 MonoBehaviour:
   m_ObjectHideFlags: 0

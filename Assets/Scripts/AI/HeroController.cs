@@ -31,7 +31,7 @@ namespace Boss.AI
         {
             state = State.Walk;
         }
-
+        
         private void OnDrawGizmos() 
         {
             Gizmos.DrawWireSphere(transform.position, sightRange);    

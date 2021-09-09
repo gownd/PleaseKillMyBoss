@@ -14,14 +14,7 @@ namespace Boss.UI
 
         [Header("Components")]
         [SerializeField] ProceduralImage fill;
-        [SerializeField] ProceduralImage empty;
         [SerializeField] TextMeshProUGUI text;
-
-        [Header("Colors")]
-        [SerializeField] Color fillGreen;
-        [SerializeField] Color emptyGreen;
-        [SerializeField] Color fillRed;
-        [SerializeField] Color emptyRed;
 
         private void Update()
         {
@@ -32,16 +25,6 @@ namespace Boss.UI
         {
             float fillAmount = health.GetCurrentHealth() / health.GetMaxHealth();
             fill.fillAmount = fillAmount;
-            if (fillAmount <= 0.33)
-            {
-                fill.color = fillRed;
-                empty.color = emptyRed;
-            }
-            else
-            {
-                fill.color = fillGreen;
-                empty.color = emptyGreen;
-            }
 
             text.text = health.GetCurrentHealth() + "/" + health.GetMaxHealth();
         }
